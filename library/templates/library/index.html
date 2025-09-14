@@ -1,0 +1,27 @@
+{% extends 'library/base.html' %}
+{% load static %}
+<h1>Biblioteca - Dom Quixote</h1>
+
+<section>
+  <h2>Login (JWT)</h2>
+  <input id="username" placeholder="Usuário">
+  <input id="password" placeholder="Senha" type="password">
+  <button onclick="login()">Entrar</button>
+  <p id="loginStatus"></p>
+</section>
+
+<section>
+  <h2>Livros salvos no banco (requer token)</h2>
+  <button onclick="listarLivros()">Listar livros</button>
+  <ul id="livrosSalvos"></ul>
+</section>
+
+<section>
+  <h2>Buscar na API OpenLibrary</h2>
+  <button onclick="buscarOL()">Carregar resultados</button>
+  <ul id="resultadosOL"></ul>
+</section>
+
+<script src="{% static 'library/js/main.js' %}"></script>
+{% block content %}
+{% endblock %}
